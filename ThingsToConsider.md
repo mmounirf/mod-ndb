@@ -1,0 +1,6 @@
+Things to Consider:
+
+  * A PRIMARY KEY is a unique index where all key columns must be defined as NOT NULL. If they are not explicitly declared as NOT NULL, MySQL declares them so implicitly (and silently). A table can have only one PRIMARY KEY. If you do not have a PRIMARY KEY and an application asks for the PRIMARY KEY in your tables, MySQL returns the first UNIQUE index that has no NULL columns as the PRIMARY KEY." refman-5.1-en.pdf  p959
+  * Before MySQL 5.1.10, USING can be given only before the index column list. As of 5.1.10, the preferred position is after the column list. Use of the option before the column list will no longer be recognized in a future MySQL release. index\_option values specify additional options for an index. " refman-5.1-en.pdf p947 Although 5.1.34-ndb-7.0.6-cluster-gpl still recognizes and create proper indexes.
+
+  * Beginning with MySQL Cluster NDB 6.2.14 and MySQL Cluster 6.3.12, you must use the NdbInterpretedCode class instead of NdbScanOperation when writing interpreted programs used for scans. See Section 2.3.14, “The NdbInterpretedCode Class”, for more information. ndbapi-en.pdf p161
